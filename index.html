@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D Carousel Greeting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styls.css">
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Đang tải...</p>
+    </div>
+
+    <div class="container">
+        <div class="name-text">Nguyễn Hoàng Thái Phong</div>
+
+        <!-- Vòng xoay ảnh 3D -->
+        <div class="carousel">
+            <img src="avt1.jpg" class="carousel-item" alt="Ảnh 1">
+            <img src="avt2.jpg" class="carousel-item" alt="Ảnh 2">
+            <img src="avt3.jpg" class="carousel-item" alt="Ảnh 3">
+            <img src="avt4.jpg" class="carousel-item" alt="Ảnh 4">
+        </div>
+
+        <!-- Khu vực hiển thị nội dung khi nhấn ảnh -->
+        <div class="display-area">
+            <img id="display-image" src="" alt="Hãy chọn hình ở trên
+            ">
+
+            <!-- Video -->
+            <video id="display-video" width="320" height="240" controls autoplay loop muted style="display:none;">
+                <source src="vid.mp4" type="video/mp4">
+                <source src="vid2.mp4" type="video/mp4">
+                <source src="vid3.mp4" type="video/mp4">
+            </video>
+
+            <!-- Lời chúc -->
+            <div id="greeting-card" class="card" style="display:none;">
+                <div class="body">
+                    <div class="content">
+                        <h2>🎓 Thư Chúc Mừng Tốt Nghiệp 🎉</h2>
+                        <p>Gửi Nguyễn Hoàng Thái Phong,</p>
+                        <p>Chúc mừng bạn đã hoàn thành một chặng đường quan trọng trong cuộc đời!</p>
+                        <p>Những nỗ lực và cố gắng của bạn đã được đền đáp xứng đáng.</p>
+                        <p>Hãy luôn tin vào bản thân và bước tiếp những ước mơ của riêng bạn.</p>
+                        <p>Chúc bạn thành công và hạnh phúc trên mỗi chặng đường tới! 🌟</p>
+                        <p style="text-align: right; margin-top: 20px;">Trân trọng,<br>MSV</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript xử lý xoay và click -->
+    <script src="main.js"></script>
+</body>
+<iframe src="https://love.tsonit.com/bon112" class="background" frameborder="0"></iframe>
+
+</html>

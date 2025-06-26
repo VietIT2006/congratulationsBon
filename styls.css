@@ -1,0 +1,198 @@
+/* Reset & cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111;
+    color: aliceblue;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Tên người được chúc */
+.name-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffcc00;
+}
+
+/* Carousel 3D */
+.carousel {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin: auto;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    animation: rotate 20s linear infinite;
+}
+
+.carousel-item {
+    width: 150px;
+    height:auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center -200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: transform 0.5s, box-shadow 0.3s;
+}
+
+.carousel-item:hover {
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* Khu vực hiển thị nội dung */
+.display-area {
+    margin-top: 40px;
+}
+
+#display-image {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #00ffff;
+    margin-bottom: 20px;
+}
+
+#display-video {
+    max-width: 100%;
+    width: 320px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #00ffff;
+    margin-top: 10px;
+}
+
+/* Card lời chúc */
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #2b2b2b, #444);
+    border: 2px solid #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.card h2 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.card p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: -1;
+    pointer-events: none; /* để người dùng không tương tác với iframe */
+}
+/* Loader overlay */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: white;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/* Spinner animation */
+.spinner {
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #00ffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hiệu ứng xoay */
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* 🔁 Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-item {
+        width: 60px;
+        height: 60px;
+        transform-origin: center -150px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .name-text {
+        font-size: 1.5rem;
+    }
+
+    #display-image,
+    #display-video {
+        width: 100%;
+        max-width: 90vw;
+    }
+
+    .carousel {
+        height: 260px;
+    }
+
+    .carousel-item {
+        width: 50px;
+        height: 50px;
+        transform-origin: center -120px;
+    }
+}
